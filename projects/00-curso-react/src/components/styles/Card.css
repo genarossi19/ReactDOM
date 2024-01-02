@@ -1,0 +1,38 @@
+.Card {
+    width: 300px;
+    
+    display: inline-block;
+    border-radius: 20px;
+   
+    box-shadow: 2px 2px 5px  #bbbb;
+    background-color: transparent;
+   
+    background-position: center;
+    text-align: center;
+    border: 1px solid ;
+    color-scheme: light dark;
+
+
+}
+
+
+
+.Card:hover{
+    background-color: #213547;
+    color: white;
+    transition: 400ms;
+    border-color: #213547;
+
+}
+@media (prefers-color-scheme: dark) {
+    .Card:hover{
+        background-color: #646cff;
+        color: #f9f9f9;
+        border-color: #f9f9f9;
+        
+    }
+  }
+  .Card a{
+    color: inherit;
+    text-decoration: inherit;
+}
