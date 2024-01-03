@@ -19,7 +19,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app)
 
-export function uploadFile(file){
-   const storageRef =  ref(storage, v4())
-   uploadBytes(storageRef, file).then(snapshot=>{console.log(snapshot)})
-}
+export function uploadFile(file) {
+    const storageRef =  ref(storage, v4());
+    
+    try {
+        
+        console.log('Subiendo: ', file.name)
+
+       uploadBytes(storageRef, file)
+          .then(snapshot => {
+            
+             console.log('Subido', snapshot);
+             console.log('Ruta completa:', snapshot.metadata.fullPath);
+             // Puedes realizar más acciones aquí si es necesario
+              // Lanza un error a propósito para probar
+          });
+    } catch (error) {
+       console.error('Error al subir el archivo:', error.message);
+      
+    }
+ }
