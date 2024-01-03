@@ -24,10 +24,10 @@ export const songs = [
         link: "https://www.youtube.com/watch?v=jRn_jPySTmI"
     },
     {
-        name: "linda_remix",
-        author: "marka akme",
-        image: "https://i.ytimg.com/vi/jRn_jPySTmI/sddefault.jpg?v=651a0535",
-        link: "https://www.youtube.com/watch?v=jRn_jPySTmI"
+        name: "hello_coto",
+        author: "Duki",
+        image: "https://i.ytimg.com/vi/6biv8AQcjNU/maxresdefault.jpg",
+        link: "https://www.youtube.com/watch?v=6biv8AQcjNU"
     }
 ];
 export default songs;
