@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useAuth0} from '@auth0/auth0-react'
-import '/home/pct-04/Documentos/React/ReactDOM/projects/01-react-auth0-intro/src/components/styles/Profile.css'
+import './styles/Profile.css'
 
 function Profile() {
     const {user, isAuthenticated} = useAuth0()
