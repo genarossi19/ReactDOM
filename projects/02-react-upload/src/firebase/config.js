@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getStorage, ref, uploadBytes} from 'firebase/storage'
+import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
 import { v4 } from "uuid";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,23 +19,41 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app)
 
-export function uploadFile(file) {
-    const storageRef =  ref(storage, v4());
+
+/**
+ * Subir archivo al storage de firebase. Guarda en carpetas dependiendo si es image o audio
+ * @param {File} file archivo a subir
+ * @returns {Promise<string>}  url del archivo subido
+ */
+export async function uploadFile(file) {
+    const fileType = file.type; // Obtén el tipo de archivo
+ 
+    let folder;
+    if (fileType.includes('audio')) {
+       folder = 'audio';
+    } else if (fileType.includes('image')) {
+       folder = 'image';
+    } else {
+       // Tipo de archivo no reconocido
+       console.error('Tipo de archivo no reconocido');
+       return 0
+    }
+ 
+    const storageRef = ref(storage, `${folder}/${v4()}`);
     
     try {
-        
-        console.log('Subiendo: ', file.name)
-
-       uploadBytes(storageRef, file)
-          .then(snapshot => {
-            
-             console.log('Subido', snapshot);
-             console.log('Ruta completa:', snapshot.metadata.fullPath);
-             // Puedes realizar más acciones aquí si es necesario
-              // Lanza un error a propósito para probar
-          });
+       console.log('Subiendo:', file.name);
+ 
+       const snapshot = await uploadBytes(storageRef, file);
+ 
+       console.log('Subido', snapshot);
+       console.log('Ruta completa:', snapshot.metadata.fullPath);
+ 
+       const url = await getDownloadURL(storageRef);
+ 
+       return url;
     } catch (error) {
        console.error('Error al subir el archivo:', error.message);
-      
+       
     }
  }
