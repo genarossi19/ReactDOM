@@ -28,6 +28,13 @@ export const songs = [
         author: "Duki",
         image: "https://i.ytimg.com/vi/6biv8AQcjNU/maxresdefault.jpg",
         link: "https://www.youtube.com/watch?v=6biv8AQcjNU"
+    },
+    {
+        name: "hello_coto",
+        author: "Duki",
+        image: "https://i.ytimg.com/vi/6biv8AQcjNU/maxresdefault.jpg",
+        link: "https://www.youtube.com/watch?v=6biv8AQcjNU"
     }
 ];
 export default songs;
+
