@@ -1,47 +1,10 @@
 import React, { useState } from 'react'
 import { useReactTable, getCoreRowModel, flexRender, getPaginationRowModel,getSortedRowModel, getFilteredRowModel} from "@tanstack/react-table";
-import data from "../data/MOCK_DATA.json";
 
-function SimpleTable() {
+
+function SimpleTable({data, columns}) {
     const [filtering, setFiltering]= useState("")
-    const columns = [
-        {
-            header: 'ID',
-            accessorKey: 'id',
-            footer: 'ID'
-
-        },
-        {
-            header: 'Nombre',
-            accessorKey: 'first_name',
-            footer: 'Nombre'
-
-        },
-        {
-            header: 'Apellido',
-            accessorKey: 'last_name',
-            footer: 'Apellido'
-
-        },
-        {
-            header: 'email',
-            accessorKey: 'email',
-            footer: 'email'
-
-        },
-        {
-            header: 'Genero',
-            accessorKey: 'gender',
-            footer: 'Genero'
-
-        },
-        {
-            header: 'FechaNac',
-            accessorKey: 'birthdate',
-            footer: 'FechaNac'
-
-        }
-    ]
+   
 
 
     // dos params: # un objeto con: arreglo de los datos a mostrar y arreglo columns para los encabezados
