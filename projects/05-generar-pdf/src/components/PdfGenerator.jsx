@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from 'react'
 import { Page, Text, View, Document, StyleSheet, Image} from '@react-pdf/renderer';
 import pctLogo from "../assets/pctlogo.png";
+import reactLogo from "../assets/react.svg";
 
 
 function PdfGenerator({name = "alumno", apellido = "polo", curso ="curso"}) {
-   
+  
+  
     const currentDate = new Date();
   const day = currentDate.getDate().toString().padStart(2, '0');
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Se suma 1 porque los meses son indexados desde 0
@@ -30,12 +33,18 @@ function PdfGenerator({name = "alumno", apellido = "polo", curso ="curso"}) {
         margin: 10
 
     },
+    image:{
+      width: 300,
+      height: 100
+    }
    
   });
   return (
-    <Document >
+    
+     
+      <Document >
     <Page size="A4" orientation='landscape' style={styles.page}>
-        
+     
         
         
       <View >
@@ -52,6 +61,8 @@ function PdfGenerator({name = "alumno", apellido = "polo", curso ="curso"}) {
       </View>
     </Page>
   </Document>
+    
+    
   )
 }
 

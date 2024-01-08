@@ -6,11 +6,11 @@ import PdfGenerator from './components/PdfGenerator'
 import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 
 function App() {
-  
   const [valorName, setValorName] = useState('');
   const handleChangeName = (event) => {
     setValorName(event.target.value);
   };
+  
 
   const [valorApellido, setValorApellido] = useState('');
   const handleChangeApellido = (event) => {
@@ -20,6 +20,7 @@ function App() {
   const handleChangeCurso= (event) => {
     setValorCurso(event.target.value);
   };
+ 
   return (
     <>  
 
@@ -27,6 +28,7 @@ function App() {
     <input type="text" placeholder='Nombre'
         value={valorName}
         onChange={handleChangeName}/>
+      
      <input type="text" placeholder='Apellido'
         value={valorApellido}
         onChange={handleChangeApellido}/>
@@ -40,9 +42,9 @@ function App() {
       height: 500 
     
   }}>
-      <PdfGenerator name={valorName} apellido={valorApellido} curso={valorCurso} />
+      <PdfGenerator name={valorName} apellido={valorApellido} curso={valorCurso}/>
     </PDFViewer>
-    <PDFDownloadLink document={<PdfGenerator/>} fileName='pruebagenerator.pdf'>
+    <PDFDownloadLink document={<PdfGenerator name={valorName} apellido={valorApellido} curso={valorCurso}/>} fileName='pruebagenerator.pdf'>
       {
 
         ({loading})=> loading ? <h3>Cargando...</h3> : <button>Descargar</button>
