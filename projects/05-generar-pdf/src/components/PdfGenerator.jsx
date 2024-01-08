@@ -36,7 +36,7 @@ function PdfGenerator({name = "alumno", apellido = "polo", curso ="curso"}) {
     <Document >
     <Page size="A4" orientation='landscape' style={styles.page}>
         
-        <Image  src={pctLogo}/> 
+        
         
       <View >
         <Text style={[styles.title, {fontSize: 50}]}>Nombre: {name}</Text>
