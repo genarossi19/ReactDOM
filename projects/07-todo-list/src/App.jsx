@@ -3,7 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Title from "./components/Title.jsx";
 import  TodoInput  from "./components/TodoInput.jsx";
-
+import TodoList from './components/TodoList.jsx';
+import Todo from './components/Todo.jsx';
 
 function App() {
   
@@ -13,6 +14,14 @@ function App() {
       <div className="container flex flex-col max-w-xl">
       <Title/>
       <TodoInput/>
+      {/* aca usamos el children  y por eso usamos cierre doble*/}
+      <TodoList>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        <Todo/>
+        
+      </TodoList>
       </div>
     </div>
   )
