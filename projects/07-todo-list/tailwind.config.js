@@ -11,6 +11,10 @@ export default {
       },
       animation:{
         'spin-slow': 'spin 5s linear infinite'
+        
+      },
+      transitionDuration:{
+        'transition-duration-slow': '300ms;'
       }
     },
   },

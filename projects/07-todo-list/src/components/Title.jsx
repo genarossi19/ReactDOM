@@ -3,7 +3,7 @@ import reactLogo from  "../assets/react.svg"
 
 function Title() {
   return (
-    <div className="text-5xl font-bold tracking-wide flex flex-row p-5 justify-center items-center an">
+    <div className="text-5xl font-bold tracking-wide flex flex-row p-5 justify-center items-center an hover:scale-125 duration-transition-duration-slow ease-in-out">
         <h1>TODO List</h1>
         <div className='animate-pulse'><img src={reactLogo} className="w-20 h-20 m-5 animate-spin-slow  hover:shadow-blue-500 " alt="React Logo" /></div>
         
