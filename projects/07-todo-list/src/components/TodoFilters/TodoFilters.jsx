@@ -2,18 +2,18 @@ import React from 'react'
 import { FilterButton, FilterButtonContainer, FiltersContainer, ItemsLeft } from './TodoFilters.components'
 
 
-function TodoFilters() {
+function TodoFilters({total, activeFilter, showActiveTodos, showCompletedTodos, showAllTodos, handleClearCompleted}) {
   return (
     <div>
       <FiltersContainer>
-        <ItemsLeft/>
+        <ItemsLeft total={total}/>
         <FilterButtonContainer>
-        <FilterButton  action={()=>{}} active='All' filter='All'/>
-        <FilterButton filter='Active'action={()=>{}} active='All'/>  
-        <FilterButton filter='Completed'action={()=>{}} active='All'/>
+        <FilterButton  action={()=>showAllTodos()} active={activeFilter} filter='All'/>
+        <FilterButton action={()=>showActiveTodos()} active={activeFilter} filter='Active'/>  
+        <FilterButton action={()=>showCompletedTodos()} active={activeFilter} filter='Completed'/>
 
         </FilterButtonContainer>
-        <button className='text-gray-400 hover:text-white cursor-pointer transition-all duration-300 ease-in-out'> Clear Completed</button>
+        <button onClick={()=>handleClearCompleted()}className='text-gray-400 hover:text-white cursor-pointer transition-all duration-300 ease-in-out'>Clear Completed</button>
       </FiltersContainer>
     </div>
   )

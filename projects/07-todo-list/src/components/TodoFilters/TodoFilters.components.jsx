@@ -2,7 +2,7 @@ import React from 'react'
 
 function FiltersContainer({children}) {
   return (
-    <div className='flex items-center justify-between p-4 bg-slate-700 border-b border-solid border-gray-600'>
+    <div className='flex flex-wrap items-center justify-between p-4 bg-slate-700 border-b border-solid border-gray-600'>
 
         {children}
     </div>
@@ -30,11 +30,11 @@ function FilterButton({action, active='', filter=''}) {
     
 
 
-  return (
-    <button className={`hover:text-white cursor-pointer transition-all duration-300 ease-in-out
-    ${active.toLowerCase() === filter.toLowerCase() ? 'text-blue-500' : 'text-gray-400'}`}>
+  return ( 
+    <button onClick={()=>action()}className={`hover:text-white cursor-pointer transition-all duration-300 ease-in-out
+    ${active.toLowerCase()  === filter.toLowerCase()  ? 'text-blue-500' : 'text-gray-400'}`}>
         {filter}
-
+ 
     </button>
   )
 }

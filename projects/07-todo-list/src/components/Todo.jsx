@@ -1,10 +1,10 @@
 import React from 'react'
 import x from '../assets/x-mark.svg'
 import checkicon from '../assets/check.svg'
-function Todo({todo}) {
+function Todo({todo, handleSetCompleted, handleDelete}) {
 
   // destrucutramos
-  const {title, completed} = todo
+  const {id,title, completed} = todo
 
   return (
     <div 
@@ -12,16 +12,16 @@ function Todo({todo}) {
        <div className='flex items-center '>
         {
           completed ? (
-            <div className='bg-green-700 p-1 rounded-full cursor-pointer'>
+            <div onClick={()=>handleSetCompleted(id)} className='bg-green-700 p-1 rounded-full cursor-pointer'>
               <img src={checkicon} alt="checked" className='h-4 w-4 ' />
             </div>
-          ) : (<span className='border border-gray-500 border-solid p-3 rounded-full cursor-pointer'></span>)
+          ) : (<span onClick={()=>handleSetCompleted(id)} className='border border-gray-500 border-solid p-3 rounded-full cursor-pointer'></span>)
         }
         
         <p className= { `pl-3 ${completed && 'line-through' }`}>{title}</p>
        
        </div>
-       <img src={x} alt="quit" className='h-5 w-5 cursor-pointer transition-all duration-300 ease-in'/>
+       <img  onClick={()=>handleDelete(id)} src={x} alt="quit" className='h-5 w-5 cursor-pointer transition-all duration-300 ease-in'/>
         
         
     
