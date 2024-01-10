@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function TodoInput() {
+function TodoInput({addTodo}) {
+
+    const [title, setTitle] =useState('')
     return (
         <div className="mt-6 relative">
             <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
@@ -8,6 +10,7 @@ function TodoInput() {
                 <span className='border border-gray-500 border-solid p-3 rounded-full'/>
             </div>
             <input type="text"
+            value={title}
                 placeholder="Nueva Tarea"
                 className='focus:shadow-lg 
                             ring-0 focus:outline outline-1 outline-blue-300
@@ -18,6 +21,7 @@ function TodoInput() {
                             bg-slate-800 rounded-xl 
                             ease-in-out
                             ' 
+                            onChange={ e=> {setTitle(e.target.value)}} 
               />
         </div>
     )
