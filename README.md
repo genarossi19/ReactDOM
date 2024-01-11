@@ -12,6 +12,8 @@ Currently, two official plugins are available:
  > [!TIP] 
   > 
   > Para crear un monorepositorio multipaquetes: **npm init -y**
+  >
+  >Para crear una carpeta de proyectos: **mkdir projets** y **cd projects**
   > 
   > Para crear un proyecto de VITE: **npm create vite@latest** visitar  https://vitejs.dev/
   > 
