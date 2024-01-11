@@ -32,6 +32,7 @@ Contenido:
 
 # 04-consumir-apirest:
 Contenido: 
+[!WARNING]
 - INCOMPLETO
 
 # 05-generar-pdf:
