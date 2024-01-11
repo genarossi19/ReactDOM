@@ -8,13 +8,19 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-  >  [!TIP]
+  
+ > [!TIP] 
+  > 
   > Para crear un monorepositorio multipaquetes: **npm init -y**
-  > Para crear un proyecto de VITE: **npm create vite@latest** visitar  https://vitejs.dev/ 
+  > 
+  > Para crear un proyecto de VITE: **npm create vite@latest** visitar  https://vitejs.dev/
+  > 
   > Para correr un proyecto vite en local Host: **npm run dev**
+  > 
   > Para correr un proyecto en Network host hay que agregar codigo al vite.config
-  > > ### vite.config.js
+  > 
+
+   ### vite.config.js
  export default defineConfig({
   plugins: [react()],
   server: {
@@ -24,50 +30,51 @@ Currently, two official plugins are available:
   },
 })
  
-## **CONTENIDO DE LOS PROYECTOS**
+
+# **CONTENIDO DE LOS PROYECTOS:**
 
 
-# 00-curso-react:
+## 00-curso-react:
 Contenido: 
 > - Cards
 > -  Estados
 > - Rutas
 
-# 01-react-auth0-intro:
+## 01-react-auth0-intro:
 Contenido: 
 > - Autenticacion con auth0
 
-# 02-react-upload:
+## 02-react-upload:
 Contenido: 
 > - Subir archivos
 > - Guardar archivos en la nube (firfebase)
 
-# 03-audio-reproductor:
+## 03-audio-reproductor:
 Contenido: 
 > - Libreria para reproducir audio
 > - Libreria: [madzad](https://github.com/madzadev/audio-player)https://github.com/madzadev/audio-player
 
-# 04-consumir-apirest:
+## 04-consumir-apirest:
 Contenido: 
 >  [!WARNING]
 >  INCOMPLETO
 > - [x] en progreso...
 
-# 05-generar-pdf:
+## 05-generar-pdf:
 Contenido: 
 > - generar y descargar pdf
 > - Inputs para editar pdf
 > - Render preview del pdf
 > - Libreria: https://react-pdf.org/
 
-# 06-tanstak-table:
+## 06-tanstak-table:
 Contenido: 
 > - Tablas
 > - Botones para paginas de las tablas
 > - Filtro input en tiempo real
 > - LIbreria: https://tanstack.com/table/v8
 
-# 07-todo-list:
+## 07-todo-list:
 Contenido: 
 > - Aplicacion de todo
 > - Uso de useState y useEffect
@@ -75,7 +82,7 @@ Contenido:
 > - DISEÑO: tailwind
 > - Libreria: https://tailwindcss.com/
 
-# 08-hook-usestate
+## 08-hook-usestate
 
   
 
