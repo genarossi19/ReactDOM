@@ -2,18 +2,19 @@
 
 import UserItem from "./UserItem";
 
-function List({users}) {
+function List({ users }) {
   return (
     <div id="list" className="pt-1 pb-1 ">
-      {users.map(user=>(
-        <UserItem key={user.id} name={user.name} age={user.age} avatar={user.avatar}/>
-        
+      {users.map((user) => (
+        <UserItem
+          key={user.id}
+          name={user.name}
+          age={user.age}
+          avatar={user.avatar}
+        />
       ))}
-      
-  
     </div>
   );
 }
 
 export default List;
-
