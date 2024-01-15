@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import Avatar from "./Users/Avatar";
-import User from "./Users/User";
+import Avatar from "./Avatar";
+import User from "./User";
 function UserItem({ avatar, name, age }) {
   // este use state solo elimina el nombre al hacer click en el UseItem. No tiene una funcion con sentido es solo para probar el uso del useState
   const [named, setNamed] = useState(name);
