@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import Card from "./components/Card";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      name: "Emilia Viernes",
+      age: 27,
+      avatar: "/images/avatar 01.jpeg",
+    },
+    {
+      id: 2,
+      name: "Maria Becerro",
+      age: 23,
+      avatar: "/images/avatar 02.jpeg",
+    },
+    {
+      id: 3,
+      name: "Mauro Monzón ",
+      age: 26,
+      avatar: "/images/avatar 03.jpeg",
+    },
+    {
+      id: 4,
+      name: "Camilo Joaquin",
+      age: 16,
+      avatar: "/images/avatar 04.jpeg",
+    },
+  ]);
+
+  const handleClearList = () => {
+    // seteamos los usuarios como array vacio
+    setUsers([]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="h-screen flex  justify-center  items-center flex-row flex-wrap  bg-slate-900">
+      {/* la funcion handleClearList se pasa como prop (sin ejecutarse) ya que el boton es hijo de Card */}
+
+      <Card users={users} clearList={handleClearList} />
+    </div>
+  );
 }
 
-export default App
+export default App;
