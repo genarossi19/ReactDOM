@@ -5,11 +5,12 @@ function Avatar({avatar,size='50px'}) {
   
   const style = {
       width: size,
-      height: size
+      height: size,
+      objectFit: 'cover'
   }
   return (
     <div className="">
-        <img className="rounded-full overflow-hidden  object-cover object-center me-4" style={style} src={avatar} alt="profile" />
+        <img className="rounded-full overflow-hidden   me-4" style={style} src={avatar} alt="profile" />
     </div>
   )
 }
