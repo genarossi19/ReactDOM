@@ -85,6 +85,22 @@ Contenido:
 > - Libreria: https://tailwindcss.com/
 
 ## 08-hook-usestate
+Contenido: 
+> - App Birthday Reminder
+> - Uso de useState
+> - Funciones como props
+> - DISEÑO: tailwind
+> - Listar elementos de un array
+> - Setear valores usando useState tocando un boton
+
+## 09-hook-useeffect
+Contenido: 
+> - App Advice Slip (muestra frases al tocar un boton)
+> - Uso de useState
+> - Funciones como props
+> - DISEÑO: tailwind
+> - Uso de una api: https://api.adviceslip.com/ 
+
 
   
 
