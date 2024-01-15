@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import UserItem from "./UserItem";
+import UserItem from "./Users/UserItem";
 
 function List({ users }) {
   return (
