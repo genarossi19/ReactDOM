@@ -15,7 +15,7 @@ function Card({quotes, getQuotes}) {
         Advice #{id}
       </h5>
       <p id="quotes" className="text-3xl font-extrabold py-3">
-       {advice}
+       “ {advice} ”
       </p>
       <div className="flex items-center w-full my-5 " id="separator">
         <hr className="border-0 h-px w-full bg-[#e0e0e0]" />

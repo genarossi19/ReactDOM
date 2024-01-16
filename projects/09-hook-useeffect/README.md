@@ -6,5 +6,7 @@ Contenido:
 > - DISEÑO: tailwind
 > - Uso de una api: https://api.adviceslip.com/ 
 > - Uso de libreria axios: https://axios-http.com/es/docs/intro
+> - Uso de libreria spinner: https://www.npmjs.com/package/react-loader-spinner
+
 
 
