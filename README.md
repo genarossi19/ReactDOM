@@ -11,26 +11,42 @@ Currently, two official plugins are available:
   
  > [!TIP] 
   > 
-  > Para crear un monorepositorio multipaquetes: **npm init -y**
+  > Para crear un monorepositorio multipaquetes:
+```terminal
+npm init -y
+```
   >
-  >Para crear una carpeta de proyectos: **mkdir projets** y **cd projects**
+  >Para crear una carpeta de proyectos: 
+  ```terminal
+mkdir projects
+cd projects
+```
   > 
-  > Para crear un proyecto de VITE: **npm create vite@latest** visitar  https://vitejs.dev/
+  > Para crear un proyecto de VITE:
+```terminal
+npm create vite@latest
+```
+>  visitar  https://vitejs.dev/
   > 
-  > Para correr un proyecto vite en local Host: **npm run dev**
+  > Para correr un proyecto vite en local Host:
+```terminal
+npm run dev
+```
   > 
   > Para correr un proyecto en Network host hay que agregar codigo al vite.config
   > 
 
-   ### vite.config.js
+   ### vite.config.js _recuerda cambiar el port_
+   ```javascript
  export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: **el puerto que eligas, por defecto: 5173** ,
+    port: "el puerto que eligas, por defecto: 5173" ,
     open: true,
   },
 })
+```
  
 
 # **CONTENIDO DE LOS PROYECTOS:**
