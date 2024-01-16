@@ -15,15 +15,15 @@ function Card() {
           dolorem.”
         </blockquote>
       </p>
-      <div className="" id="separator">
-        <hr />
-        <div id="vertical"></div>
-        <div id="vertical"></div>
-        <hr />
+      <div className="flex items-center w-full my-5 " id="separator">
+        <hr className="border-0 h-px w-full bg-[#e0e0e0]"/>
+        <div id="vertical" className="h-6 w-5 bg-[#e0e0e0] rounded-xl mx-2"></div>
+        <div id="vertical" className="h-6 w-5 bg-[#e0e0e0] rounded-xl mx-2"></div>
+        <hr className="border-0 h-px w-full bg-[#e0e0e0]"/>
       </div>
 
-      <div id="dice-button">
-        <img src={dice} alt="dice" className="w-4 h-4" />
+      <div id="dice-button" className="flex items-center bg-primary-100 rounded-full p-4 my-4 cursor-pointer ">
+        <img src={dice} alt="dice"className="w-6 h-6"/>
       </div>
     </div>
   );
