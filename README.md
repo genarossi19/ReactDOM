@@ -99,7 +99,7 @@ Contenido:
 Contenido: 
 >  [!WARNING]
 >  INCOMPLETO
-> - [x] en progreso...
+> - [ ] en progreso...
 
 ## 05-generar-pdf:
 Contenido: 
@@ -120,15 +120,15 @@ Contenido:
 > - Aplicacion de todo
 > - Uso de useState y useEffect
 > - Funciones como props
-> - DISEÑO: tailwind
-> - Libreria: https://tailwindcss.com/
+> - DISEÑO: https://tailwindcss.com/
+
 
 ## 08-hook-usestate
 Contenido: 
 > - App Birthday Reminder
 > - Uso de useState
 > - Funciones como props
-> - DISEÑO: tailwind
+> - DISEÑO: https://tailwindcss.com/
 > - Listar elementos de un array
 > - Setear valores usando useState tocando un boton
 
@@ -148,6 +148,37 @@ Contenido:
 > - Uso de web para iconos: https://heroicons.com/outline
 > - Uso de web para colores con IA: https://tintmint.net/
 > - Uso de web para fuentes: https://fonts.google.com/?query=roboto
+>
+
+
+## 10-react-router-dom
+Contenido: 
+>  [!WARNING]
+>  INCOMPLETO
+> - [ ] en progreso...
+
+## 11-react-query
+Contenido: 
+>  - INFINITE SCROLL
+> 
+> - Libreria: https://tanstack.com/query/latest/docs/react/overview
+```terminal
+npm i @tanstack/react-query
+```
+plugin de eslint
+```terminal
+npm i -D @tanstack/eslint-plugin-query
+```
+en .eslintrc.cjs
+```cjs
+{
+  "extends": ["plugin:@tanstack/eslint-plugin-query/recommended"]
+}
+
+```
+
+
+
 
 
 
