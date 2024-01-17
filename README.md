@@ -15,28 +15,30 @@ Currently, two official plugins are available:
 ```terminal
 npm init -y
 ```
-  >
+  >[!TIP] 
   >Para crear una carpeta de proyectos: 
   ```terminal
 mkdir projects
 cd projects
 ```
-  > 
+  > [!TIP] 
   > Para crear un proyecto de VITE:
 ```terminal
 npm create vite@latest
 ```
->  visitar  https://vitejs.dev/
-  > 
-  > Para correr un proyecto vite en local Host:
+> [!NOTE] 
+ >  visitar  https://vitejs.dev/
+
+
+### Para correr un proyecto vite en local Host:
 ```terminal
 npm run dev
 ```
-  > 
-  > Para correr un proyecto en Network host hay que agregar codigo al vite.config
+   
+  ### Para correr un proyecto en Network host hay que agregar codigo al vite.config
   > 
 
-   ### vite.config.js _recuerda cambiar el port_
+   #### vite.config.js _recuerda cambiar el port_
    ```javascript
  export default defineConfig({
   plugins: [react()],
@@ -46,6 +48,27 @@ npm run dev
     open: true,
   },
 })
+```
+### Para usar million (render de react 70% más rapido)
+```terminal
+npm install million@ñatest
+```
+
+```javascript
+ import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import million from 'million/compiler'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [million.vite({auto:true}),react()],
+  server: {
+    host: '0.0.0.0',
+    port: "5173" ,
+    open: true,
+   },
+})
+
 ```
  
 
