@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
 
-function PokemonCard({ pokemonName='pokemon name' }) {
+function PokemonCard({ pokemonName = "pokemon name" }) {
   return (
-    <article className="flex flex-col border border-slate-200 hover:shadow-lg transition-all ease-in-out duration-500 hover:shadow-slate-800 rounded-md p-5 max-w-xs h-full justify-end hover:cursor-pointer hover:scale-105 bg-white ">
+    <article className="flex flex-col border border-slate-200 hover:shadow-lg transition-all ease-in-out duration-500 hover:shadow-slate-800 rounded-md p-5 max-w-xs h-full justify-end hover:cursor-pointer hover:scale-105 bg-white overflow-hidden ">
       <img src="" alt="pokemon" className="w-full h-full object-cover  " />
       <div className="flex justify-between items-center">
         <h3 className="text-3xl font-bold capitalize">{pokemonName}</h3>
@@ -10,17 +10,17 @@ function PokemonCard({ pokemonName='pokemon name' }) {
       </div>
       <div className="flex gap-2 mt-3">Badges</div>
       <div className="flex gap-2 mt-3">
-        <p>
+        <p className="me-2">
           <span className="text-lg ">BaseXP: </span>{" "}
           <span className="font-light text-lg ">267 </span>
         </p>
 
-        <p>
+        <p className="me-2">
           <span className="text-lg ">Weight: </span>{" "}
           <span className="font-light text-lg ">267kg </span>
         </p>
 
-        <p>
+        <p className="me-2">
           <span className="text-lg ">Height: </span>{" "}
           <span className="font-light text-lg ">267mts </span>
         </p>
