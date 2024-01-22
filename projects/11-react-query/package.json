@@ -15,7 +15,8 @@
     "million": "^2.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.5.3"
+    "react-intersection-observer": "^9.5.3",
+    "react-lottie": "^1.2.4"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.17.7",

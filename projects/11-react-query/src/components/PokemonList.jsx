@@ -43,7 +43,7 @@ function PokemonList() {
               <Fragment key={pokemon.name}>
                  {index === page.results.length - 1 ? (
                   <div ref={ref}> <PokemonCard pokemonName={pokemon.name}/></div>
-                 ): (<PokemonCard pokemonName={pokemon.name}/>)}
+                 ): (<PokemonCard pokemonName={pokemon.name} pokedex={pokemon.id}/>)}
               </Fragment>
              
             ));
