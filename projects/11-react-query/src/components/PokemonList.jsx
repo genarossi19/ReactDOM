@@ -3,6 +3,8 @@ import {useInView} from 'react-intersection-observer'
 import PokemonCard from "./PokemonCard";
 import { getPokemons } from "../api/queries/getPokemons";
 import { Fragment, useEffect } from "react";
+import LottieLoading from "./LottieLoading";
+import animationpoke from '../assets/animations/pokeball.json'
 
 function PokemonList() {
   const { data, status, fetchNextPage, error } = useInfiniteQuery({
@@ -22,7 +24,7 @@ function PokemonList() {
   }, [fetchNextPage, inView])
 
   if(status==='pending'){
-    return <p>Loading...</p>
+    return <LottieLoading alto="220px" ancho="220px" animacion={animationpoke}/>
   }
 
   if(status === 'error'){
