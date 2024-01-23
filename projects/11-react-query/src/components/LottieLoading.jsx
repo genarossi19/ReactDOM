@@ -1,20 +1,16 @@
-import { Lottie } from "react-lottie";
+import Lottie from "lottie-react";
+import animation from "../assets/animations/pokeball.json";
 
-function LottieLoading({ alto, ancho, animacion }) {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animacion,
-  };
+import './LottieLoading.css'
 
+const LottieLoading = () => {
   return (
-    <Lottie
-      options={defaultOptions}
-      height={alto}  
-      width={ancho}
-      isClickToPauseDisabled
-    />
-  );
-}
+    <div className="loading-animation">
+  <Lottie className="animation" animationData={animation}  />
+</div>
 
+
+  )
+
+}
 export default LottieLoading;
