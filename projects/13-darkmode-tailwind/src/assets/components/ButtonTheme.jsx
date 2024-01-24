@@ -4,7 +4,13 @@ import DarkIcon from "../icons/DarkIcon"
 import LightIcon from "../icons/LightIcon";
 
 function ButtonTheme() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(()=>{
+
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      return "dark"
+    }
+    return "light"
+  });
 
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
