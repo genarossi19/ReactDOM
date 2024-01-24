@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import DarkIcon from "./assets/icons/DarkIcon";
+import LightIcon from "./assets/icons/LightIcon";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -23,9 +25,14 @@ function App() {
     >
       <button
         onClick={handleChangeTheme}
-        className="bg-slate-400 px-6 py-3 rounded-lg text-white hover:bg-slate-700 transition-all duration-300 focus:ring-4 active:bg-slate-600 active:transition-none dark:bg-white dark:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+        className="bg-slate-400 px-6 py-3 rounded-lg text-white hover:bg-slate-700 transition-all duration-300 focus:ring-4 active:bg-slate-600 active:transition-none dark:bg-white dark:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white flex flex-col items-center justify-center btn"
       >
-        {theme === "dark" ? "Cambiar a claro" : "Cambiar a oscuro"}
+        <span className="flex items-center justify-center mb-2">
+          {theme === "dark" ? <DarkIcon className="w-20 h-20 fill-current" /> : <LightIcon className="w-20 h-20 fill-current" color="white" />}
+        </span>
+        <span>
+          {theme === "dark" ? "Cambiar a claro" : "Cambiar a oscuro"}
+        </span>
       </button>
     </div>
   );
