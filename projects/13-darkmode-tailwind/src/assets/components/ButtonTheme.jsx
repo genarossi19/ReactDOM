@@ -34,7 +34,7 @@ function ButtonTheme() {
         className="bg-slate-400 px-6 py-3 min-w-48 min-h-36  rounded-lg text-white hover:bg-slate-700 transition-all duration-300 focus:ring-4 active:bg-slate-600 active:transition-none dark:bg-white dark:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white flex flex-col items-center justify-center btn"
       >
         <span className="flex items-center justify-center mb-2">
-          {theme === "dark" ? <DarkIcon className="w-20 h-20 fill-current" /> : <LightIcon className="w-20 h-20 fill-current" color="white" />}
+          {theme === "dark" ? <LightIcon className="w-20 h-20 fill-current" /> : <DarkIcon className="w-20 h-20 fill-current" color="white" />}
         </span>
         <span>
           {theme === "dark" ? "Cambiar a claro" : "Cambiar a oscuro"}
