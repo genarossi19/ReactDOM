@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiSolidDashboard } from "react-icons/bi";
+import { MdSpaceDashboard } from "react-icons/md";
 import MenuItem from './components/MenuItem';
 import { MdOutlineWork } from "react-icons/md";
 import { FaCalendar,FaMessage } from "react-icons/fa6";
@@ -16,15 +16,12 @@ function App() {
         </div>
 
         {/* Menú con diferentes iconos y etiquetas */}
-        <MenuItem icon={BiSolidDashboard} label="Dashboard" link="#" />
-        <MenuItem icon={MdOutlineWork} label="Job Board" link="#"/>
-        <MenuItem icon={FaCalendar} label="Calendar" link="#" />
-        <MenuItem icon={FaMessage} label='Message' link="#"/>
-        
-        
         <nav>
-          <ul>
-            <li></li>
+          <ul >
+          <li><MenuItem icon={MdSpaceDashboard} label="Dashboard" link="#" /></li>
+            <li><MenuItem icon={MdOutlineWork} label="Job Board" link="#"/></li>
+            <li><MenuItem icon={FaCalendar} label="Calendar" link="#" /></li>
+            <li><MenuItem icon={FaMessage} label='Message' link="#"/></li>
           </ul>
         </nav>
       </div>
