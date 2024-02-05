@@ -1,0 +1,7 @@
+.btn:hover .icon{
+    @apply  fill-white transition-all duration-300  ease-in-out
+}
+
+.icon{
+    @apply w-20 h-20
+}

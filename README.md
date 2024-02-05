@@ -11,65 +11,26 @@ Currently, two official plugins are available:
   
  > [!TIP] 
   > 
-  > Para crear un monorepositorio multipaquetes:
-```terminal
-npm init -y
-```
-  >[!TIP] 
-  >Para crear una carpeta de proyectos: 
-  ```terminal
-mkdir projects
-cd projects
-```
-  > [!TIP] 
-  > Para crear un proyecto de VITE:
-```terminal
-npm create vite@latest
-```
-> [!NOTE] 
- >  visitar  https://vitejs.dev/
-
-
-### Para correr un proyecto vite en local Host:
-```terminal
-npm run dev
-```
-   
-  ### Para correr un proyecto en Network host hay que agregar codigo al vite.config
+  > Para crear un monorepositorio multipaquetes: **npm init -y**
+  >
+  >Para crear una carpeta de proyectos: **mkdir projets** y **cd projects**
+  > 
+  > Para crear un proyecto de VITE: **npm create vite@latest** visitar  https://vitejs.dev/
+  > 
+  > Para correr un proyecto vite en local Host: **npm run dev**
+  > 
+  > Para correr un proyecto en Network host hay que agregar codigo al vite.config
   > 
 
-   #### vite.config.js _recuerda cambiar el port_
-   ```javascript
+   ### vite.config.js
  export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: "el puerto que eligas, por defecto: 5173" ,
+    port: **el puerto que eligas, por defecto: 5173** ,
     open: true,
   },
 })
-```
-### Para usar million (render de react 70% más rapido)
-```terminal
-npm install million@ñatest
-```
-
-```javascript
- import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import million from 'million/compiler'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [million.vite({auto:true}),react()],
-  server: {
-    host: '0.0.0.0',
-    port: "5173" ,
-    open: true,
-   },
-})
-
-```
  
 
 # **CONTENIDO DE LOS PROYECTOS:**
@@ -99,7 +60,7 @@ Contenido:
 Contenido: 
 >  [!WARNING]
 >  INCOMPLETO
-> - [ ] en progreso...
+> - [x] en progreso...
 
 ## 05-generar-pdf:
 Contenido: 
@@ -120,15 +81,15 @@ Contenido:
 > - Aplicacion de todo
 > - Uso de useState y useEffect
 > - Funciones como props
-> - DISEÑO: https://tailwindcss.com/
-
+> - DISEÑO: tailwind
+> - Libreria: https://tailwindcss.com/
 
 ## 08-hook-usestate
 Contenido: 
 > - App Birthday Reminder
 > - Uso de useState
 > - Funciones como props
-> - DISEÑO: https://tailwindcss.com/
+> - DISEÑO: tailwind
 > - Listar elementos de un array
 > - Setear valores usando useState tocando un boton
 
@@ -148,40 +109,10 @@ Contenido:
 > - Uso de web para iconos: https://heroicons.com/outline
 > - Uso de web para colores con IA: https://tintmint.net/
 > - Uso de web para fuentes: https://fonts.google.com/?query=roboto
->
-
-
-## 10-react-router-dom
-Contenido: 
->  [!WARNING]
->  INCOMPLETO
-> - [ ] en progreso...
-
-## 11-react-query
-Contenido: 
->  - INFINITE SCROLL
-> 
-> - Libreria: https://tanstack.com/query/latest/docs/react/overview
-```terminal
-npm i @tanstack/react-query
-```
-plugin de eslint
-```terminal
-npm i -D @tanstack/eslint-plugin-query
-```
-en .eslintrc.cjs
-```cjs
-{
-  "extends": ["plugin:@tanstack/eslint-plugin-query/recommended"]
-}
-
-```
-
-
-
 
 
 
   
+
 
 
