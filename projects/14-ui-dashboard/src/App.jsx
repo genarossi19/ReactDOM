@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import { MdSpaceDashboard } from "react-icons/md";
-import MenuItem from './components/MenuItem';
-import { MdOutlineWork } from "react-icons/md";
-import { FaCalendar,FaMessage } from "react-icons/fa6";
+import MenuItem from "./components/MenuItem";
+import { MdOutlineWork, MdLogout } from "react-icons/md";
+import { FaCalendar, FaMessage } from "react-icons/fa6";
 
+import vector from "../public/vector.svg";
 
 function App() {
   return (
@@ -17,15 +18,32 @@ function App() {
 
         {/* Menú con diferentes iconos y etiquetas */}
         <nav>
-          <ul >
-          <li><MenuItem icon={MdSpaceDashboard} label="Dashboard" link="#" /></li>
-            <li><MenuItem icon={MdOutlineWork} label="Job Board" link="#"/></li>
-            <li><MenuItem icon={FaCalendar} label="Calendar" link="#" /></li>
-            <li><MenuItem icon={FaMessage} label='Message' link="#"/></li>
+          <ul>
+            <li>
+              <MenuItem icon={MdSpaceDashboard} label="Dashboard" link="#" />
+            </li>
+            <li>
+              <MenuItem icon={MdOutlineWork} label="Job Board" link="#" />
+            </li>
+            <li>
+              <MenuItem icon={FaCalendar} label="Calendar" link="#" />
+            </li>
+            <li>
+              <MenuItem icon={FaMessage} label="Message" link="#" />
+            </li>
           </ul>
         </nav>
+        Image & logout
+        <div className="flex flex-col gap-4 ">
+          <img src={vector} alt="vector" className="" />
+          <MenuItem icon={MdLogout} label="Logout" link="#" />
+        </div>
       </div>
-      <div className="col-span-5 p-4 "><h1 className='uppercase text-2xl font-bold  rounded- tracking-[4px]'>PAGE</h1></div>
+      <div className="col-span-5 p-4 ">
+        <h1 className="uppercase text-2xl font-bold  rounded- tracking-[4px]">
+          PAGE
+        </h1>
+      </div>
     </div>
   );
 }
