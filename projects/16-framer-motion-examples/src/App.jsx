@@ -1,26 +1,40 @@
 import "./App.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const variants = {
+  odd: {
+    backgroundColor: "#000000",
+    color: "#ffffff",
+  },
+  even: {
+    backgroundColor: "#ffffff",
+    color: "#000000",
+  },
+};
 
 function App() {
-  const isVisible = true
+  const [counter, setCounter] = useState(0);
+
   return (
-
-    
-    <AnimatePresence>
-      {isVisible &&  (
-          <motion.div className="w-[150px] h-[150px] bg-white rounded-md" 
-          animate={{
-            scale: [1, 2, 2, 1, 1],
-            rotate: [0, 0, 270, 270, 0],
-            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-          }}
-          transition={{duration: 2 }} 
-          />
-      )}
-       
-
-    </AnimatePresence>
-   
+    <div>
+      <motion.div
+        id="box"
+        className=" h-36 w-36 place-content-center grid rounded-md m-3"
+        animate={counter % 2 === 0 ? "even" : "odd"}
+        variants={variants}
+      >
+        <h1 className="text-3xl">{counter}</h1>
+      </motion.div>
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+        className="w-full h-full bg-slate-700 hover:bg-slate-800 transition-all duration-300 px-4 py-1 rounded-md "
+      >
+        Count+
+      </button>
+    </div>
   );
 }
 
