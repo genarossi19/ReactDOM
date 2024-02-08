@@ -18,24 +18,24 @@ function App() {
 
   return (
     <div className=" flex flex-wrap item-center justify-center">
-      <div className="w-72 h-72 bg-noe mb-4 overflow-hidden">
-        <motion.div
-          id="box"
-          className=" h-36 w-36 place-content-center grid rounded-md m-3"
-          animate={counter % 2 === 0 ? "even" : "odd"}
-          variants={variants}
-          drag
-          dragConstraints={{
-            top: -50,
-            left: -50,
-            right: 50,
-            bottom: 50,
-          }}
-        >
-          <h1 className="text-3xl">{counter}</h1>
-        </motion.div>
+      <div className="w-72 h-full bg-none mb-4 overflow-hidden">
+      <motion.div
+        id="box"
+        className=" h-36 w-36 place-content-center grid rounded-md m-3"
+        animate={counter % 2 === 0 ? "even" : "odd"}
+        variants={variants}
+        drag='x'
+        dragConstraints={{
+          
+          left: 50,
+          right: 50,
+          
+        }}
+      >
+        <h1 className="text-3xl">{counter}</h1>
+      </motion.div>
       </div>
-
+     
       <button
         onClick={() => {
           setCounter(counter + 1);
