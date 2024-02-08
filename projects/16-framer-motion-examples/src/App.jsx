@@ -17,7 +17,7 @@ function App() {
   const [counter, setCounter] = useState(0);
 
   return (
-    <div>
+    <div className=" flex flex-wrap item-center justify-center">
       <motion.div
         id="box"
         className=" h-36 w-36 place-content-center grid rounded-md m-3"
@@ -30,9 +30,17 @@ function App() {
         onClick={() => {
           setCounter(counter + 1);
         }}
-        className="w-full h-full bg-slate-700 hover:bg-slate-800 transition-all duration-300 px-4 py-1 rounded-md "
+        className="w-full h-full bg-slate-700 hover:bg-slate-800 transition-all duration-300 px-4 py-1 rounded-md mb-3 "
       >
         Count+
+      </button>
+      <button
+        onClick={() => {
+          setCounter(counter - 1);
+        }}
+        className="w-full h-full bg-slate-700 hover:bg-slate-800 transition-all duration-300 px-4 py-1 rounded-md "
+      >
+        Count-
       </button>
     </div>
   );
