@@ -1,29 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdSpaceDashboard } from "react-icons/md";
 import MenuItem from "./components/MenuItem";
 import { MdOutlineWork, MdLogout } from "react-icons/md";
 import { FaCalendar, FaMessage } from "react-icons/fa6";
 import { motion, useScroll } from "framer-motion";
-import "../src/index.css"
+
+import "../src/index.css";
 
 import vector from "../public/vector.svg";
 
 function App() {
   const { scrollYProgress } = useScroll();
-  return (
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollTo(0, 0);
+    };
 
+    // Event listener para manejar el scroll al principio al recargar la página
+    window.addEventListener("beforeunload", handleScroll);
+
+    // Limpiar el event listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener("beforeunload", handleScroll);
+    };
+  }, []); // Se ejecuta solo en el montaje inicial
+
+  return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 0.8,
-        delay: 0.5,
-        ease: [0, 0.71, 0.2, 1.01],
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
       id="container"
-      className="min-h-screen grid grid-cols-6"
+      className=" min-h-screen grid grid-cols-6"
     >
-       <motion.div
+      <motion.div
         className="fixed top-0 left-0 right-0 h-[5px] bg-purple-500 transform origin-left"
         style={{ scaleX: scrollYProgress }}
       />
@@ -61,11 +71,13 @@ function App() {
               <h3 className="text-center font-medium text-gray-800">
                 Get upgrade
               </h3>
-              <p className="text-sm text-gray-600 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p className="text-sm text-gray-600 text-center">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
               <motion.button
-              whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.08 }}
                 whileTap={{
-                  scale: 0.8
+                  scale: 0.8,
                 }}
                 className="p-4 w-full bg-purple-600 text-white rounded-md "
               >
