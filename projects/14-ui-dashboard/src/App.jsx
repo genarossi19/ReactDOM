@@ -3,12 +3,15 @@ import { MdSpaceDashboard } from "react-icons/md";
 import MenuItem from "./components/MenuItem";
 import { MdOutlineWork, MdLogout } from "react-icons/md";
 import { FaCalendar, FaMessage } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import "../src/index.css"
 
 import vector from "../public/vector.svg";
 
 function App() {
+  const { scrollYProgress } = useScroll();
   return (
+
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -20,8 +23,12 @@ function App() {
       id="container"
       className="min-h-screen grid grid-cols-6"
     >
+       <motion.div
+        className="fixed top-0 left-0 right-0 h-[5px] bg-purple-500 transform origin-left"
+        style={{ scaleX: scrollYProgress }}
+      />
       {/* span-1 + span-2 = grid-cols-6 */}
-      <div id="sidebar" className=" col-span-1 p-4 border border-e-gray ">
+      <div id="sidebar" className=" col-span-1 p-4  ">
         {/* Logo */}
         <div className="text-center py-8">
           <h1 className="uppercase font-bold tracking-[4px]">Tu Logo</h1>
@@ -45,7 +52,7 @@ function App() {
             </ul>
           </nav>
           {/* Image & logout */}
-          <div className="flex flex-col gap-4 ">
+          <div className="flex flex-col gap-8 ">
             <img src={vector} alt="vector" className="" />
             <div
               id="upgrade"
@@ -54,6 +61,7 @@ function App() {
               <h3 className="text-center font-medium text-gray-800">
                 Get upgrade
               </h3>
+              <p className="text-sm text-gray-600 text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
               <motion.button
               whileHover={{ scale: 1.08 }}
                 whileTap={{
