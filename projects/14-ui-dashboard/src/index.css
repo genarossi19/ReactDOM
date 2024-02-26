@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+#sidebar::-webkit-scrollbar {
+    width: 0;  /* Oculta la barra de desplazamiento en navegadores webkit (Chrome, Safari, etc.) */
+  }
+  
+  #sidebar {
+    scrollbar-width: none;  /* Oculta la barra de desplazamiento en navegadores que soportan la propiedad scrollbar-width (Firefox, etc.) */
+  }
+  

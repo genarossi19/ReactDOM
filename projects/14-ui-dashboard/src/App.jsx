@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { MdSpaceDashboard } from "react-icons/md";
 import MenuItem from "./components/MenuItem";
-import { MdOutlineWork, MdLogout } from "react-icons/md";
+import { MdOutlineWork, MdLogout,MdOutlineMenu } from "react-icons/md";
 import { FaCalendar, FaMessage } from "react-icons/fa6";
 import { motion, useScroll } from "framer-motion";
 
 import "../src/index.css";
 
-import vector from "../public/vector.svg";
+import vector from "./assets/vector.svg";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -31,14 +31,15 @@ function App() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
       id="container"
-      className=" min-h-screen grid grid-cols-6"
+      className=" min-h-screen grid grid-col-1 lg:grid-cols-6"
     >
       <motion.div
         className="fixed top-0 left-0 right-0 h-[5px] bg-purple-500 transform origin-left"
         style={{ scaleX: scrollYProgress }}
       />
       {/* span-1 + span-2 = grid-cols-6 */}
-      <div id="sidebar" className=" col-span-1 p-4  ">
+      {/* Sidebar */}
+      <div id="sidebar" className=" fixed lg:static top-0 -left-full w-full h-full overflow-y-scroll  col-span-1 p-4  border-r ">
         {/* Logo */}
         <div className="text-center py-8">
           <h1 className="uppercase font-bold tracking-[4px]">Tu Logo</h1>
@@ -84,10 +85,16 @@ function App() {
                 Learn more
               </motion.button>
             </div>
-            <MenuItem icon={MdLogout} label="Logout" link="#" />
+            
           </div>
+          <MenuItem icon={MdLogout} label="Logout" link="#" />
         </div>
       </div>
+      {/* Btn Menu Mobile */}
+      <button id="menuButton" className="block lg:hidden absolute bottom-4 right-4 bg-purple-600 p-3 rounded-full text-white text-2xl">
+      <MdOutlineMenu/>
+      </button>
+      {/* Content */}
       <div className="col-span-5 p-4 ">
         <h1 className="uppercase text-2xl font-bold  rounded- tracking-[4px]">
           PAGE
