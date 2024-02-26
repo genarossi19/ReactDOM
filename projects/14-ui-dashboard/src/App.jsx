@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MdSpaceDashboard } from "react-icons/md";
 import MenuItem from "./components/MenuItem";
-import { MdOutlineWork, MdLogout,MdOutlineMenu } from "react-icons/md";
+import { MdOutlineWork, MdLogout,MdOutlineMenu,MdClose  } from "react-icons/md";
 import { FaCalendar, FaMessage } from "react-icons/fa6";
 import { motion, useScroll } from "framer-motion";
 
@@ -25,6 +25,14 @@ function App() {
     };
   }, []); // Se ejecuta solo en el montaje inicial
 
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const handleSidebar = ()=>{
+    setSidebar(!sidebar)
+
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -39,7 +47,7 @@ function App() {
       />
       {/* span-1 + span-2 = grid-cols-6 */}
       {/* Sidebar */}
-      <div id="sidebar" className=" fixed lg:static top-0 -left-full w-full h-full overflow-y-scroll  col-span-1 p-4  border-r ">
+      <div id="sidebar" className={ `fixed lg:static top-0 ${sidebar ? "-left-0" : "-left-full "} lg:w-full h-full overflow-y-scroll  col-span-1 p-4  border-r z-50 bg-white w-[80%]`} >
         {/* Logo */}
         <div className="text-center py-8">
           <h1 className="uppercase font-bold tracking-[4px]">Tu Logo</h1>
@@ -91,9 +99,9 @@ function App() {
         </div>
       </div>
       {/* Btn Menu Mobile */}
-      <button id="menuButton" className="block lg:hidden absolute bottom-4 right-4 bg-purple-600 p-3 rounded-full text-white text-2xl">
-      <MdOutlineMenu/>
-      </button>
+      <motion.button onClick= {handleSidebar} id="menuButton" className="block lg:hidden absolute bottom-4 right-4 bg-purple-500 p-3 rounded-full text-white text-2xl shadow-md">
+      {sidebar ? <MdClose/> : <MdOutlineMenu/>}
+      </motion.button>
       {/* Content */}
       <div className="col-span-5 p-4 ">
         <h1 className="uppercase text-2xl font-bold  rounded- tracking-[4px]">
