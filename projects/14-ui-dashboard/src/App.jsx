@@ -47,7 +47,7 @@ function App() {
       />
       {/* span-1 + span-2 = grid-cols-6 */}
       {/* Sidebar */}
-      <div id="sidebar" className={ `fixed lg:static top-0 ${sidebar ? "-left-0" : "-left-full "} lg:w-full h-full overflow-y-scroll  col-span-1 p-4  border-r z-50 bg-white w-[80%]`} >
+      <div id="sidebar" className={ `fixed lg:static top-0 ${sidebar ? "-left-0" : "-left-full "} lg:w-full h-full overflow-y-scroll  col-span-1 p-4  border-r z-50 bg-white w-[80%] md:w-[50%]`} >
         {/* Logo */}
         <div className="text-center py-8">
           <h1 className="uppercase font-bold tracking-[4px]">Tu Logo</h1>
