@@ -1,5 +1,5 @@
 /**
- * Funcion sin nombre
+ * AppReducer
  *
  * @param {array} state - Los datos que tenemos de momento
  * @param {function} action - Accion que queremos realizar
@@ -16,7 +16,9 @@
 export default (state, action) => {
   switch (action.type) {
     case "ADD_TRANSACTION":
-      return state;
+      return {
+        transactions: [...state.transactions, action.payload],
+      };
     default:
       return state;
   }

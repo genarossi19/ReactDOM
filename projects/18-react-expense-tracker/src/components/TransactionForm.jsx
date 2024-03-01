@@ -11,7 +11,7 @@ function TransactionForm() {
   const onSubmit = (e) => {
     //para no reinicie el navegador
     e.preventDefault();
-    addTransaction()
+    addTransaction({id:1,description, amount})
     console.log(description, amount);
   };
 
