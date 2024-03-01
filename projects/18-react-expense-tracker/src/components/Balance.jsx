@@ -1,14 +1,12 @@
-//importamos el contexto
-import { Context } from "../context/GlobalState";
-//importamos el hook para usar el contexto
-import { useContext } from "react";
+//Ahora solo llamamos nuestro custom hook
+import { useGlobalState } from "../context/useGlobalState";
 
 
-//Con el uso del contexto podemos pasar valores entre componentes sin pasar por el componente parent de los mismos. 
-//El uso del contexto sirve para la comunicacion de datos entre componentes sin pasar por props
+
+
 
 function Balance() {
-  const data = useContext(Context);
+  const data = useGlobalState(); //No necesita el Context porque ya lo tiene
   return (
     <div>
       <h1>Balance</h1>

@@ -6,7 +6,7 @@ import TransactionForm from "./components/TransactionForm.jsx";
 function App() {
   return (
 
-    //pruebo el valor del contexto (total:100 del GlobalProvider)
+    
     <GlobalProvider>
       <Header/>
       <Balance/>
