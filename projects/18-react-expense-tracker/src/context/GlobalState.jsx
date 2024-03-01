@@ -12,8 +12,11 @@ export const GlobalProvider = ({ children }) => {
   // Corrige el orden de los argumentos en useReducer
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  return (
-    <Context.Provider value={{ transactions: state.transactions }}>
+  function addTransaction()
+{
+    console.log("Add transaction")
+}  return (
+    <Context.Provider value={{ transactions: state.transactions, addTransaction }}>
       {children}
     </Context.Provider>
   );
