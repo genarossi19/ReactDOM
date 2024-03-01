@@ -5,7 +5,7 @@ import { createContext, useContext } from "react";
 export const Context = createContext();
 
 // Creación de un custom hook para optimizar el uso del contexto
-const useGlobalState = () => {
+export const useGlobalState = () => {
   const context = useContext(Context);
   return context;
 };

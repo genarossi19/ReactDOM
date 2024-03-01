@@ -5,12 +5,10 @@ import TransactionForm from "./components/TransactionForm.jsx";
 
 function App() {
   return (
-
-    
     <GlobalProvider>
-      <Header/>
-      <Balance/>
-      <TransactionForm/>
+      <Header />
+      <Balance />
+      <TransactionForm />
       <h1>Hello world</h1>
     </GlobalProvider>
   );

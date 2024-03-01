@@ -1,5 +1,5 @@
 //Ahora solo llamamos nuestro custom hook
-import { useGlobalState } from "../context/useGlobalState";
+import { useGlobalState } from "../context/useGlobalState.js";
 
 
 

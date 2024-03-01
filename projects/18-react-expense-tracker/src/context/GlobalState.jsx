@@ -1,11 +1,22 @@
 // En GlobalState.jsx
-
 import PropTypes from "prop-types";
-import useGlobalState from "./useGlobalState";
+import {  useReducer } from "react"; // Agrega useReducer
+import AppReducer from "./AppReducer";
+import { Context } from "../context/useGlobalState.js";
 
-// Creación del proveedor
 export const GlobalProvider = ({ children }) => {
-  return <useGlobalState.Provider value={{ total: 100 }}>{children}</useGlobalState.Provider>;
+  const initialState = {
+    transactions: [],
+  };
+
+  // Corrige el orden de los argumentos en useReducer
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  return (
+    <Context.Provider value={{ transactions: state.transactions }}>
+      {children}
+    </Context.Provider>
+  );
 };
 
 GlobalProvider.propTypes = {
