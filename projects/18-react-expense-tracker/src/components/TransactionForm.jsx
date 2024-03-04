@@ -1,19 +1,58 @@
+/**
+ * TransactionForm
+ * 
+ * Componente funcional que representa un formulario para ingresar nuevas transacciones.
+ * Utiliza el contexto global para acceder a la función `addTransaction` que agrega transacciones al estado global.
+ * 
+ * @component
+ * @example
+ * // Uso típico en un componente de React
+ * <TransactionForm />
+ */
 import { useState } from "react";
 import useGlobalState from "../context/useGlobalState";
-function TransactionForm() {
-  //capturamos valores definiendo estados
 
+function TransactionForm() {
+  // Captura de valores definiendo estados
   const { addTransaction } = useGlobalState();
 
+  /**
+   * @typedef {Object} State
+   * @property {string} description - Descripción de la transacción.
+   * @property {number} amount - Monto de la transacción.
+   */
+
+  /** 
+   * @type {State} 
+   * @description Estado local del componente para la descripción y el monto de la transacción.
+   */
   const [description, setDescription] = useState();
   const [amount, setAmount] = useState(0);
 
+  /**
+   * ## onSubmit
+   * 
+   * Maneja el envío del formulario, evitando que se reinicie el navegador.
+   * Llama a la función `addTransaction` del contexto global para agregar una nueva transacción.
+   * Muestra en la consola la descripción y el monto de la transacción.
+   * 
+   * @function
+   * @param {Event} e - Evento de envío del formulario.
+   * @returns {void}
+   * 
+   * 
+   */
   const onSubmit = (e) => {
-    //para no reinicie el navegador
+    // Evita que se reinicie el navegador al enviar el formulario
     e.preventDefault();
-    addTransaction({id:1,description, amount})
+
+    // Agrega una nueva transacción utilizando la función del contexto global
+    addTransaction({ id: 1, description, amount });
+
+    // Muestra en la consola la descripción y el monto de la transacción
     console.log(description, amount);
   };
+
 
   return (
     <div>
